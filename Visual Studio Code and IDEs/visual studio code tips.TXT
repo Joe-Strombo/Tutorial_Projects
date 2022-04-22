@@ -1,0 +1,4 @@
+
+
+SHIFT + ALt + A    -    comments out everything selected!
+

@@ -1,0 +1,479 @@
+
+TERMINAL TIPS
+
+
+For example, to open Windows Terminal from PowerShell with three panes, with the left pane running a Command Prompt 
+profile and the right pane split between your PowerShell and your default profile running WSL, enter:
+
+wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
+
+
+TO OPEN LINUX TERMINAL TYPE WSL
+
+
+
+
+
+
+
+COMMAND LINE TIPS
+
+ipconfig 
+
+ping (website address, name of a computer on network, IP address of a computer on network) 
+
+md (make directory)
+
+cd (current directory)
+
+cd.. (up one directory)
+
+dir (show current directory)
+
+dir Folder\folder (example: dir desktop\games) shows contents of a specific folder without 
+the need to navigate to said folder
+
+dir *.png (search for all png in directory. this can work with any file type)
+
+if you type a file's name in command line it will open it using default app (example C:\users\JosephSkelton\
+poop.txt would open the pool file in my default text editor)
+
+\? after any command will pull up the help menu for that command
+
+
+
+
+TERMINAL FOR LINUX
+
+TO OPEN LINUX IN WINDOWS TERMINAL TYPE WSL
+
+for some stupid raisin, my path is mtn/c/users/vgp/  (some shit about a mounted drive, apparently it's faster to use the 
+linux default path, idfk.)
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+COMMON COMMANDS
+
+
+pwd - print working directory (check current dir)
+
+ls - list directory contents (list filesin dir)
+
+ls -a (show hidden files)
+
+ls -l - long form (extra info for files. the first digit of the result indicates if it's a dir or file, 
+D for dir, - for file
+
+more (spits out a screen's worth of results, then you click down on the down arrow to scroll more. Hit space to scroll 
+an entire page
+
+mkdir (make dir) 
+
+cd (change dir)
+
+cd .. (up one level)
+
+cd / (root of system)
+
+cd ~ (home)
+
+clear (clear screen)
+
+touch fileName.txt (creates text file if file doesn't exist, or updates its timestamp if it does exist)
+
+nano (text editor. ctrl + k is cut)
+
+mv file.txt /photos (moves file)
+mv file.txt newname.txt (renames file)
+
+
+cp file1.txt file2.txt (copy file)
+
+rm file1.txt (delete file)
+
+rm dir dirname (delete empty dir)
+
+rm -R dirname (delete dir. MAKE SURE YOU ARE IN THE CORRECT DIR. For example if you rm -R the home dir you 
+delete all of your user data with one keystroke)
+
+which filename (search where the file is)
+
+history (shows last 500 commands)
+
+ifconfig (ip config)
+
+iwconfig (wireless config)
+
+ping (pings until you hit Ctrl + C)
+
+uname -a (summary of OS)
+
+top (task manager)
+
+ls -lah  (list, long form, all files including hidden, and human-readable-numbers for readable byte numbers)
+
+man programName (manual for the program)
+
+textEditorName filename.txt (create a file and open it in an editing application! nano is a common text editor)
+
+cat filename.txt (shows contents of file)
+less filename.txt (shows collapsable contents for large files. Hit enter for each line, and Q to quit.)
+grep 'string' .filename (searches for specific text)
+
+
+!! (last command!)
+
+kill program (quits program)
+
+killall program (quits all instances of program)
+
+xkill (turns cursor into an X that kills the next thing you click on)
+
+htop (brings up task manager) then arrow key down until you find the program you want to kill, then hit enter
+
+wget https://somelinux.com/new-release.iso (wget gets a web command) 
+
+bc (opens up a basic calculator)
+
+--help (after a command) brings up help 
+
+
+free (shows memory used by system. -m shows memory in megabytes. when the info appears, remember that "free" is 
+completely free memory, and "available" is the total memory that could be available if the machine was forced to use it)
+
+df (disk free command) -h for human readable numbers
+
+uptime (gives a quick readout of how long the comp has been running, and the load average (strain on the system. load 
+average spits out three results, first for last 1 min, second for last 5 min, third for last 15min. the number represents
+how many tasks the CPU is waiting to process.))
+
+sudo systemctl status programname 
+sudo systemctl restart programname
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+INSTALLING AND MANAGING PACKAGES
+
+
+sudo apt install appname (asks for password then installs package! very important command!)
+sudo apt update (updates repositories) repositories are online servers that contain packages
+! when installing packages pay attention to the "# to remove" line, it tells you if the package manager is planning on
+removing anything during installation !
+
+to clean up and remove packages installed as a part of other removed package's installations you do:
+sudo apt autoremove
+make sure you to sudo apt update before installing any packages!! you don't wanna be using some dusty old repository to 
+download shit from do u?
+
+sudo apt upgrade (updates yo shit. use sudo apt dist-upgrade to upgrade stuff that needs additional removal/addition)
+
+sudo reboot (reboots)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+BASH RC
+the file for customizing BASH is ~/bash.rc 
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+OUTPUT REDIRECTION
+
+echo "String" (outputs string) printf "String\with\linebreaks" (outputs string with linebreaks)
+> (redirects output to a file! for example the echo or printf functions would create a text file instead of
+outputting to screen)
+
+
+| (redirects command to a program) 
+example: ls -l | grep searchcriteria  (limits results of ls -l to only results that contain the search criteria)
+ 
+ls -l | wc -l (gives you the number of lines/items in a directory)
+
+
+
+ls -l > file.txt (redirects the results of ls -l to file.txt. you can redirect many command outputs like this. )
+!! IMPORTANT. the greater than symbol (>) REPLACES whatever file you redirect it to. This means if you use
+ls -l > file.txt and file.txt already exists, it will be REPLACED by the new output. To ADD instead of replace 
+use two greater than symbols >> 
+example:  ls -l >> file.txt.  (append instead of replace)
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+PERMISSIONS
+
+chmod (change permissions) 
+chmod +x file.txt (gives execute permissions for all)
+chmod -x file.txt (removes execute permissions for all)
+chmod u+w file.txt (gives write permissions for user only)
+chmod g+r file.txt (gives read permissions for group only)
+ls -l command gives a code at the beginning of each file or dir, and the code is split into 4 groups:
+
+example:
+drwxrwxrwx    -all permissions to all (wtf)
+-rwrr-xr--    -a file with all permissions to user, and read permisions for group and other
+
+
+   user  group other (world)
+d | rwx | rwx | rwx
+(first letter represents file type, d for dir, - for file)
+
+
+CHANGING PERMISSIONS NUMERICALLY
+
+chmod 777 textfile (will give permissions -rwxrwxrwx
+chmod 400 textfile (will give permissions -r--------
+
+(the 3 digit number represents user,group,other, one digit for each. r w and x each have numerical values, and adding them together is how you add
+multiple permissions to a single user.)
+
+read=4   write=2   execute=1  (so 6 would be rw-, 7 would be rwx, 3 would be -wx
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+LOGGING
+cat/var/log/syslog
+(text file that includes extensive logging info on your system. info overload.)
+
+cd var/log/ (make sure the syslog files are rotating? wtf. make sure they're not too big or somethin)
+cat appname/error.log (shows error log for application)
+cat dmesg
+dmesg (info about possible issues with hardware, temp issues, overclock issues, etc.)
+
+head and tail commands: (shows first 10 lines and last 10 lines, respectively)
+example: 
+head /var/log/syslog (first 10 lines of log)
+head -n 50 /var/log/syslog (first 50 lines of log)
+tail -f /var/log/syslog (starts a live feed of the file's log, showing you immediately when it is updated)
+
+journalctl -u unitname (shows all log messages related to a program or file) (add f to -u to follow specific program)
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+USERS
+
+cat /etc/passwd (list of all users on system)
+cat /etc/group (list of all groups on system)
+groups (shows u what groups ur a part of)
+groups username (shows u what groups another user is a part of)
+sudo adduser newusername 
+sudo userdel -r username (if you don't want to delete the files for the user don't include -r!!)
+sudo groupadd groupname (must log out and back in to complete add)
+sudo groupdel groupname 
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+HISTORY
+
+use up and down arrows to last used command history
+History (shows last 500 commands)
+!420 (!#) executes the command with that number in the history
+(most shells come with a default config where if you begin ur command with a space it hides it from history)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+VARIABLES 
+myvar="string" 	(assigns a string to a variable)
+myvar=69	(assigns a number to a variable)
+
+variables are single session only, to make permanent variables use Bash RC?
+
+echo $varname to recall and remind you a variable's contents. Anytime you recall a variable put $ in front of it!
+
+if you save a var to var="/etc"   it will pull up the ls of /etc if you echo $var. Useful for very long paths!
+
+/env (gives you list of variables in session)
+
+export myvar="string" (adds the variable to the environment, making it work for more than one session.)
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+ALIASES
+
+alias (shows all available aliases)
+
+unalias someAlias (removes the alias)
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+ERRORS 
+
+echo $? (returns the error status of last command. 0 is successful, any other number is an error code)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+FIND
+
+find / -name searchName (/ starts the find from root! -name tells it to search by name. searchName is the search criteria)
+
+(a * before the searchName tells the find command to look for any result that ENDS with the criteria. A star before AND
+after tells it to look for any result that CONTAINS the criteria.)
+
+find by type: 
+find -type f -name searchName (searches for only files)
+find -type d -name searchName (searches for only dirs)
+
+
+(LONG EXAMPLE TIME):
+find /var/log -type f -name *.log -mtime -7 -exec rm {} \;
+(search inside /home/var/log for FILES with a NAME that ENDS in .log that have been MODIFIED in the last 7 days.
+THEN, run exec removal command to delete all entries that end in .log over the past 7 days.) NOTE: Don't do this! 
+This is just an example.
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+REMOTE CONNECTION
+
+
+sudo apt install openssh-server
+
+sudo netstat -tulpn (gives you a list of services listening for remote connection)
+
+ip a (on the computer you want to do remote connection to) THEN copy the IP address that shows up. THEN on home comp, 
+do ssh myuser@ip.address (you are now connected!) to exit connection type exit
+
+sudo systemctl statis ssh
+(gives you status of login attempts/remote access attempts)
+
+NOTE: make you when using ssh you disable root access! 
+once in the remote connection: 
+sudo nano /etc/ssh/sshd_config      scroll down until you find "PermitRootLogin" inside Permissions, and turn it off. 
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+TRANSFERING FILES FROM ONE MACHINE TO ANOTHER USING SECURE COPY PROTOCOL (SCP)
+
+
+Copy IP Address of system you want to transfer TO (ip a)
+
+(from home comp) scp filetocopy.txt username@ip.address:/home/username (will ask for your password. if you don't include a dir it will
+copy to home)
+
+scp -r folder/ ip.address: (-r stands for recursive, allowing it to copy the entire directory)
+
+scp ip.address:file.txt . (switching the order that ip address and file are entered allows you to copy files FROM the remote machine 
+onto the machine you are currently working from. remember, a period stands for current working dir. so this command copys the text file
+from the remote machine and copys it to your current working directory)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+TRANSFERRING FILES WITH rsync
+
+(allows you to transfer files to hard drives, flash drives, etc.)
+
+
+rsync -r dirName user@ip.address:/home/user  (copys all files in dir. Does not display an output unless you give it -v)
+
+rsync -avz dirName user@ip.address:/home/user (a is archive mode, makes sure all permissions, ownership, and timestamps are matching.
+a includes recursive (r). z is compress, handy for slower links. v is verbose, shows all files copied and info about the copy at the bottom)
+(this command syncs the transfer, only sending what is missing from the target machine's dir. so, if a copy didn't complete correctly, this 
+will copy only the files needed to fix the problem!)
+
+-e option lets you specify what remote shell to use (ssh is default) 
+--remove-source-files tag removes the source file during the transfer! careful
+
+important example!: 
+rsync -avz --remove-source-files --dry-run fileName user@ip.address:/home/user  (gives you an output of what the transfer WOULD do. (Dry run, duh)) 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+RANDOM NOTES
+
+/dev/null is purgatory. Anything you send there disappears
+
+
+. is short for current working directory. So    mv file.txt .   moves the file to the current dir
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+POWERSHELL TIPS
+
+Always run as admin just in case you run into permission issues 
+
+
+Everything in Powershell is in a Verb-Noun format. To see the true command when using a common alias (such as cls for 
+clear screen) is Get-Alias 
+
+
+Start-Transcript  (starts a transcript of everything you type, so you don't forget what you do in the session)
+
+Get-Command (Every command/cmdlet possible in powershell)
+
+CTRL + C (stop executing)
+
+Get-Help (help command)
+
+(Beginner Tip) Instead of using Aliases, type get-alias alias to find out what the real command is. 
+Example get-alias cls = clear-host
+
+To see all aliases type get-alias
+
+Get-Process = task manager
+
+Get-Process -nameofobject = task manager for specific object
+
+Get-Help -examples (examples)
+
+Get-Help -web (web help)

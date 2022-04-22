@@ -1,0 +1,42 @@
+body {
+  background-image: linear-gradient(to bottom right, rgba(130, 255, 207, 0.438), rgba(255, 113, 236, 0.479));
+}
+
+.home {
+text-align: center;
+margin: auto;
+padding: 10;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#greetings {
+  font-size: 5vw;
+  color: rebeccapurple;
+  border: rosybrown;
+  border-style: ridge;
+  border-radius: 15px;
+  padding: 10;
+}
+
+#firstP {
+  border: springgreen;
+  border-style: solid;
+  border-radius: 0px;
+  font-size: 2vw;
+  margin: auto;
+  width: auto;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(150, 212, 212, 0.4);
+  }
+  
+  th:nth-child(even),td:nth-child(even) {
+    background-color: rgba(150, 212, 212, 0.4);
+  }

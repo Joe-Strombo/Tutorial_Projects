@@ -1,0 +1,584 @@
+
+
+
+JAVA
+
+
+/*
+BASIC SYNTAX
+
+VARIABLE:
+type variableName = value;
+(String - stores text, such as "Hello". String values are surrounded by double quotes
+int - stores integers (whole numbers), without decimals, such as 123 or -123
+float - stores floating point numbers, with decimals, such as 19.99 or -19.99
+char - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+boolean - stores values with two states: true or false)
+
+COMPARISON OPERATORS
+You can use comparison operators (<, >, ==, <=, >=, and !=) to return BOOLEANS from variable comparisons)
+
+*/
+
+
+
+
+
+/* Hello World */
+
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+
+
+/*
+INTELLIJ IDEA TIPS
+
+holding ctrl while using arrow keys moves ur cursor WORD by WORD
+fn (function) and arrow keys takes you to beginning and end of LINE
+page up and page down take you to top and bottom of PROGRAM
+ALT key and arrows change your TABS
+CTRL + D lets you DUPLICATE code
+select lines and press CTRL + / to COMMENT OUT the lines
+
+
+
+*/
+
+
+
+
+/* Function Syntax */
+
+ReturnType Name () { ... }
+
+example: 
+
+void sendEmail () {
+
+}
+
+
+
+/* Every Java program has at least one function, the "main" function, and one class, the "main" class. */
+
+
+example: 
+
+public class Main {
+  void main () {
+...
+}
+}
+
+/* a method is a function that is part of a class. (any function inside the class's curly braces is a method)
+the keyword that comes before "class" is the ACCESS MODIFIER. (public, private, etc.) */
+
+/* classes are named with PascalNamingConvention (first letter capitalized) methods are camelCase */
+
+
+/* packages are groups of related classes */
+
+/* name of base package is com.yourwebsitename */
+/* code goes in src folder (source) */
+/* all java files have java extension */
+/* all statements are terminated with semicolon; */
+
+
+
+/* In Java, everything is inside a CLASS, and every Java program has a MAIN class. Classes are blueprints for OBJECTS, which
+are instances of the class that constructed them, like a factory creating cars.
+class syntax is:
+class class_name {
+code block
+}
+classes are written in PascalCase
+ */
+
+
+
+/* METHODS are groups of instructions to do specific tasks. all methods are written inside CLASSES. 
+(FUNCTIONS are functionally(heh) similar to METHODS, but methods are class-dependant and functions work in multiple classes.
+method syntax is:
+return_type method_name( parameters ) { code block 
+} 
+CALLING a method means you are using (executing) the method. the syntax is:
+method_name ( parameters );
+the MAIN method is AUTOMATICALLY CALLED when we run the Java program
+methods (and variables) are written in camelCase 
+*/ 
+
+
+
+// (snake_case_is_like_this_bro) 
+
+
+
+/* JAVA PROGRAM STRUCTURE: (it's ugly but less complicated than it looks :])
+
+public class Main {
+	public static void main(String[] args) {
+	}
+}
+
+*/
+
+
+
+/* 
+System.out.println(); (outputs to the screen)
+OUT is an object of the 'PrintStream' Class.
+OUT has the print() and println() methods
+use '.' to access print()/println of OUT
+OUT refers to the standard output device (screen)
+SYSTEM is a Class
+(out is a 'field') object
+*/
+
+
+
+/* 
+CREATING, COMPILING, and EXECUTING a JAVA PROGRAM (without IDE)
+(name of file is name.java. name is same as name of Class!! main.java)
+
+sample code:
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Greetings Earth!");
+	}
+}
+
+
+public class Welcome {
+	public static void main(String[] args) {
+		System.out.println("Greetings Earth!");
+	}
+}
+
+(name file welcome.java)
+
+COMPILE MAINJAVA USING CMD
+
+cmd (command line) cd desktop (nav to desktop)
+
+execute: 
+C:Users\Joe Joe\Desktop>javac Main.java (compiles java and creates a CLASS file)
+*/
+
+
+
+
+/* 
+INTELLIJ IDEA (IDE for Java) TIPS
+
+type "psvm" in intelliJ as a shortcut for the "public static void main" (main method)
+
+type "sout" as a shortcut for the "System.out.println" method
+
+*/
+
+
+
+
+/*
+PACKAGES, CLASSES, and METHODS
+
+to use (access) methods from a different class, type
+ClassName.methodName();
+
+PACKAGES are storage containers for your related CLASSES. CLASSES can be used as storage containers for METHODS
+
+
+*/
+
+
+
+
+/*
+ACCESS MODIFIERS (public, private, protected, default)
+specify how to access classes, methods, and fields.
+
+for PUBLIC access level is EVERYWHERE (inside a class, outside a class, inside the package, outside the package)
+for PRIVATE access level is only INSIDE THE CLASS.
+for STATIC you can access fields/methods using the CLASS NAME (if you want methods n shit to be accessable from 
+within other classes by refrencing the class that owns them like Class.method you have to make the method STATIC!)
+
+(for example) OUT is a static field of SYSTEM, which is why you can only use OUT by typing System.out)
+
+
+*/
+
+
+
+
+
+
+/*
+VOID RETURN TYPE
+
+teaching example: "f(x) = x + 1" is a basic math function. if you sub 5 for x it would be f(5) = 5 + 1. 
+x + 1 is the RETURN VALUE of the funcion. the return TYPE is a number.
+
+VOID return types return NO VALUE. 
+
+*/
+
+
+
+/*
+CONDITIONAL STATEMENTS
+Java has the following conditional statements:
+
+Use if to specify a block of code to be executed, if a specified condition is true
+Use else to specify a block of code to be executed, if the same condition is false
+Use else if to specify a new condition to test, if the first condition is false
+Use switch to specify many alternative blocks of code to be executed
+
+IF ELSE: SHORTHAND FOR TERNARY OPERATOR
+SYNTAX:
+variable = (condition) ? expressionTrue :  expressionFalse;
+
+EXAMPLE:
+int time = 20;
+if (time < 18) {
+  System.out.println("Good day.");
+} else {
+  System.out.println("Good evening.");
+}
+
+You can simply write:
+
+int time = 20;
+String result = (time < 18) ? "Good day." : "Good evening.";
+System.out.println(result);
+*/
+
+
+
+
+/*
+SWITCH:
+use SWITCH when there are many code blocks that could be executed from one conditional 
+(commands with many possible outcomes)
+
+
+SYNTAX:
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+
+EXAMPLE:
+(days of the week)
+int day = 4;
+switch (day) {
+  case 1:
+    System.out.println("Monday");
+    break;
+  case 2:
+    System.out.println("Tuesday");
+    break;
+  case 3:
+    System.out.println("Wednesday");
+    break;
+  case 4:
+    System.out.println("Thursday");
+    break;
+  case 5:
+    System.out.println("Friday");
+    break;
+  case 6:
+    System.out.println("Saturday");
+    break;
+  case 7:
+    System.out.println("Sunday");
+    break;
+}
+*/
+
+
+
+
+/*
+LOOPS:
+
+WHILE block:
+Specifies code to be executed as long as the condition is true (while THIS is true, do THAT)
+
+SYNTAX:
+while (condition) {
+  // code block to be executed
+}
+
+(place a "do" code in front to specify a code be executed ONCE before the condition is tested, 
+then WHILE the condition is true)
+
+SYNTAX:
+do {
+  // code block to be executed
+}
+while (condition) {
+  // code block to be executed
+}
+
+
+FOR loop (important notes! hard to remember syntax)
+
+when u know exactly how many times you want to loop through a block of code use the FOR loop.
+
+SYNTAX:
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}
+
+EXPLAINED:
+Statement 1 is executed (one time) before the execution of the code block.
+
+Statement 2 defines the condition for executing the code block.
+
+Statement 3 is executed (every time) after the code block has been executed.
+
+
+FOR EACH loop
+FOR EACH loop uses the same keyword FOR, but it is used exclusively to loop through elements of an ARRAY
+
+SYNTAX:
+for (type variableName : arrayName) {
+  // code block to be executed
+}
+
+(JAVA knows that this is a FOR EACH loop rather than a FOR loop)
+
+
+
+BREAK and CONTINUE
+
+
+use BREAK to break out of a SWITCH statement or LOOP
+
+example (stops the loop when i is equal to 4):
+
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    break;
+  }
+  System.out.println(i);
+}
+
+
+the CONTINUE statement breaks out of (skips) one iteration if a specified condition is met, then CONTINUES with the next
+iteration
+
+example (skips 4):
+
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    continue;
+  }
+  System.out.println(i);
+}
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+/*
+COMMAND LINE ARGUMENTS are DATA given to the MAIN METHOD
+
+example:
+public static void main(String[] args)  {
+
+
+}
+the COMMAND LINE ARGS would be inbetween ( and ), with the "String" part explaining what data type the arguments will b
+
+in CMD (command line) (to compile type javac Main.java)
+THEN, to give arguments you would type:
+java Main argument1 argument2
+
+(to edit your COMMAND LINE ARGS with intelliJ go to RUN, then EDIT CONFIGURATION,
+then select the MAIN CLASS and type into the PROGRAM ARGUMENTS bar)
+
+
+
+*/
+
+
+
+
+
+/*
+PROGRAMMING ERRORS
+
+SYNTAX errors are GRAMMAR errors
+RUNTIME errors are errors which happen while the program is RUNNING
+LOGICAL errors are errors in the program's structure or logic
+
+the COMPILER (javac in cmd) helps return ERRORS
+
+
+
+*/
+
+
+/*
+DATA TYPES (diff between PRIMITIVE and REFERENCE types_
+
+PRIMITIVE are SIMPLE VALUE data types (byte, short, long, int, float, double, char)
+
+
+PRIMITIVE TYPES HOLD THEIR VALUE INSIDE THE TYPE 
+REFERNECE TYPES hold their ADDRESS inside the type
+
+
+STRING is a reference type 
+
+
+
+
+*/
+
+
+
+
+
+/*
+CHAR data type
+
+CHAR data types are for single characters.
+chars are declared like this:
+
+char c;
+characters are put inside single quotes. Everything in Java inside single quotes are CHARS, and they take 2 bytes of mem.
+
+
+
+range: ['\u000', '\uffff'] or [0, 65535] (each number represents a character) 
+'A' = '\u0041' and 65
+'a' = '\u0061' and 97
+
+
+tip: if you store a CHAR as an integer (  int myNum = 'A';  )  it will be recalled as its INTEGER REPRESENTATION 
+(number between 0 and 65535, 'A' is 65)
+
+
+
+*/
+
+
+
+
+
+/*
+BOOLEAN 
+
+example:
+boolean b1 = true;
+boolean b2 = 2 < 3;   (returns false)
+boolean b3 = x <= 5;  
+boolean isActive = true;
+
+
+you can recall isActive like this:
+System.out.println(isActive);
+
+and it will return true
+
+and you can create CONDITIONS, like:
+
+if(isActive)
+System.out.println("active");
+
+else
+System.out.println("not active");
+
+the system will print whichever string belongs to the CONDITION that is MET (true or false)
+
+
+
+*/
+
+
+
+
+/*
+STRING data type
+
+
+STRING is a CLASS, which means (among other things) that it comes with some STATIC METHODS build in to work with
+
+
+myString.toUpperCase()   (returns the string ((makes a new string)) but in upper case duh)
+
+
+RECALLING STRINGS using METHODS
+
+if you execute:
+String s1 = "Joe"
+
+System.out.println(s1.toUpperCase());
+
+it will return JOE
+
+if you execute:
+String s2 = s1.toLowerCase();
+
+it will initialize a variable named s2 and return the result of the method to it
+
+
+
+s1.length (returns number of characters in string as an INTEGER)
+
+note: when a character does NOT exist inside a string, the "indexOf" method returns -1 instead of a location!
+
+
+
+
+INSTANTIATING an STRING OBJECT
+
+"new" is the keyword to instantiate an object (this means to create an INSTANCE of a CLASS, like a factory that 
+creates instances of the same car)
+
+
+SYNTAX:
+ClassName objectName = new ClassName(Parameters);
+
+example:
+
+Point point = new Point(1, 2);
+
+
+
+
+*/
+
+
+
+/* 
+CONCATENATION
+
+when concatentating make sure you remember to add a + " " + in between strings to add spaces!
+
+Syntax:
+System.out.println("First String ".concat("Second String"));
+
+
+
+*/
